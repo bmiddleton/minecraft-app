@@ -54,12 +54,12 @@ public class BlockEventLogger extends AbstractEventLogger implements Listener {
         // TODO: There are things we can do with item stacks to get more accurate names;
         // This should probably be done eventually as *hopefully* this api will remain fairly constant.
 
-        final String name = block.getType().name();
+        String name = block.getType().name();
         final String baseType = block.getType().name();
         final World w = block.getWorld();
 
-        if(block.getType() == Material.LOG || block.getType() ==  Material.LOG_2){
-            // TODO: Something like this to get log names using item stacks....
+        if(block.getType() == Material.STONE ){
+            name += Byte.toString(block.getData());
         }
 
         final Point3dLong coords = new Point3dLong(location.getX(), location.getY(), location.getZ());
